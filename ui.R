@@ -28,11 +28,7 @@ dashboardPage(
                                   state countries from 1990 to 2017. ICO is the main 
                                   intergovernmental organisation for coffee market, representing 
                                   almost entire coffee production market and two-thirds of 
-                                  coffee consumption.')),
-                    tags$h4(tags$b('Problem Statement')),
-                    tags$h5(tags$b('In the recent years, with the Coffee Rust threatening Latin 
-                                   American crop, the need to identify altenrate crop markets for 
-                                   the retailers arises.')), width = 100))
+                                  coffee consumption.')), width = 100))
                 ),
             # Second Tab
             tabItem(tabName = "top_5",
