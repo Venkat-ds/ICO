@@ -6,7 +6,7 @@ library(DT)
 library(plotly)
 library(gapminder)
 
-ICO_1 <- fread(file = "~/Desktop/Boot_Camp/R/Shiny_Project/ICO_CROP_DATA.csv")
+ICO_1 <- fread(file = "~/Desktop/Boot_Camp/R/Shiny_Project/ICO/ICO_CROP_DATA.csv")
 
 #### Top 6 of the World
 
