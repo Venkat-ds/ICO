@@ -139,6 +139,12 @@ g_fall <- ggplot(ICO_by_October, aes(x = TOTAL_PRODUCTION, y = DOMESTIC_CONSUMPT
 
 ########### Percentage change in Total Production (2010 - 2017)
 
+ICO_PCT_CHG <- ICO_Top_PROD %>% 
+  group_by(COUNTRY) %>% 
+  arrange(YEAR, .by_group = TRUE) %>% 
+  mutate(pct_change = (TOTAL_PRODUCTION/lag(TOTAL_PRODUCTION) - 1) * 100)
+
+
 
 g_pct_chg <- ggplot(ICO_PCT_CHG, aes(x = YEAR, y = pct_change)) +
   geom_line(aes(col = COUNTRY)) +
