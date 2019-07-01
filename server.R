@@ -22,7 +22,7 @@ server <- function(input, output) {
             theme_light() +
             guides(size = FALSE) +
             labs(
-                title = 'CHANGES IN TOTAL PRODUCTION AND DOMESTIC CONSUMPTION (1990-2017)',
+                title = 'TREND OVER THE YEARS (1990-2017)',
                 x = 'TOTAL PRODUCTION',
                 y = 'DOMESTIC CONSUMPTION'
             ) +

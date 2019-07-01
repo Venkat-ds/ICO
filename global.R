@@ -6,7 +6,7 @@ library(DT)
 library(plotly)
 library(gapminder)
 
-ICO_1 <- fread(file = "~/Desktop/Boot_Camp/R/Shiny_Project/ICO/ICO_CROP_DATA.csv")
+ICO_1 <- fread(file = "./ICO_CROP_DATA.csv")
 
 #### Top 6 of the World
 
@@ -77,7 +77,7 @@ ICO_Top_PROD <- ICO_1 %>%
 
 ##### 'Total Production' vs 'Domestic Consumption' by 'SEASON'
 
-CO_by_April <- ICO_1 %>% 
+ICO_by_April <- ICO_1 %>% 
   group_by(YEAR) %>% 
   filter(MONTH == 'April')
 
@@ -144,14 +144,15 @@ ICO_PCT_CHG <- ICO_Top_PROD %>%
   arrange(YEAR, .by_group = TRUE) %>% 
   mutate(pct_change = (TOTAL_PRODUCTION/lag(TOTAL_PRODUCTION) - 1) * 100)
 
-
+ICO_PCT_CHG <-ICO_PCT_CHG %>% 
+  filter(YEAR > 2010)
 
 g_pct_chg <- ggplot(ICO_PCT_CHG, aes(x = YEAR, y = pct_change)) +
   geom_line(aes(col = COUNTRY)) +
   theme_light() +
   guides(size = FALSE) +
   labs(
-    title = 'PERCENTAGE (%) CHANGES IN TOTAL PRODUCTION (2010-2017)',
+    title = '% CHANGES IN TOTAL PRODUCTION (2010-2017)',
     x = 'YEAR',
     y = ' % Change in TOTAL PRODUCTION'
   ) +
